@@ -1,0 +1,125 @@
+
+body {
+    margin: 0;
+    padding: 0;
+
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url("images/Fallout_terminal.jpg");
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+
+    font-family: "Courier New", monospace;
+    color: #66cc66;  /* softer green */
+}
+a {
+    color: #33ff33;
+    text-decoration: none;
+}
+
+/* Visited links (prevents purple) */
+a:visited {
+    color: #33ff33;
+}
+
+
+a:hover {
+    color: #66ff66;
+    text-decoration: underline;
+}
+
+
+a:active {
+    color: #99ff99;
+}
+
+main {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: rgba(255, 248, 230, 0.9); 
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+
+h1 {
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #8b6f47;
+    padding-bottom: 10px;
+}
+
+h2 {
+    font-size: 24px;
+    margin-top: 35px;
+    color: #5c3d1c;
+}
+
+
+p {
+    line-height: 1.6;
+    font-size: 25px;
+}
+
+img {
+    display: block;
+    margin: 15px 0;
+    height: 180px;  
+    width: auto;
+    border: 3px solid #5c3d1c;
+}
+
+nav {
+  position: sticky; 
+  top: 0;
+  width: 100%;
+  padding: 14px 0;  
+  z-index: 1000;
+  background: transparent; 
+}
+.nav-pill {
+  width: fit-content;
+  max-width: calc(100% - 24px);
+  margin: 0 auto;   
+  padding: 10px 18px;
+  background: rgba(0, 20, 0, 0.85);  
+  border: 2px solid rgba(102, 204, 102, 0.8);
+  border-radius: 999px;     
+  box-shadow: 0 8px 20px rgba(0,0,0,0.45);
+  display: flex;
+  gap: 18px; 
+  justify-content: center;
+  align-items: center;
+}
+.nav-pill a {
+  color: rgba(102, 204, 102, 0.95);
+  text-decoration: none;
+  font-weight: bold;
+  padding: 6px 10px;
+  border-radius: 999px;
+}
+.nav-pill a:visited {
+  color: rgba(102, 204, 102, 0.95);
+}
+.nav-pill a:hover {
+  background: rgba(102, 204, 102, 0.12);
+  color: rgba(140, 255, 140, 0.95);
+}
+
+.nav-pill a.active {
+  background: rgba(102, 204, 102, 0.18);
+  border: 1px solid rgba(102, 204, 102, 0.45);
+}
+
+
+footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    margin-top: 40px;
+    color: #555;
+}
