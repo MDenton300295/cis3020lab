@@ -195,10 +195,10 @@ footer {
 }
 
 .game-image {
-    display: block;          /* allows centering */
-    margin: 20px auto;       /* centers image horizontally */
+    display: block;         
+    margin: 20px auto;       
 
-    width: 220px;            /* adjust size */
+    width: 220px;           
     height: auto;
 
     border: 2px solid #33ff33;
@@ -208,9 +208,9 @@ footer {
 }
 .game-image:hover {
 
-    transform: scale(1.15);     /* makes image grow */
+    transform: scale(1.15);     
 
-    box-shadow: 0 0 20px #33ff33; /* glow effect */
+    box-shadow: 0 0 20px #33ff33; 
 
 }
 
