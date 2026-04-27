@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Fallout Fan Page Home</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<h1>
+	<span class="rad-symbol">&#9762;</span>
+	Questions and Answers
+	<span class="rad-symbol">&#9762;</span>
+	</h1>
+<nav>
+  <div class="nav-pill">
+    <a href="index.html">Home</a>
+    <a href="top5.html">Top 5</a>
+    <a href="fan_creations.html">Fan Creations</a>
+    <a href="q&a.html">Q&A/Faction Picker</a>
+    <a href="bts.html">Behind the Scenes</a>
+  </div>
+</nav>
+<div class="rank-card">
+ <h2>Common Fallout Questions</h2>
+
+      <h3>Q: What is a Vault?</h3>
+      <p>A: Vaults are underground shelters built before the Great War, often designed as social experiments.</p>
+
+      <h3>Q: What is the Great War?</h3>
+      <p>A: The nuclear exchange that devastated the world in 2077 and set the events of the Fallout apocalypse in motion.</p>
+
+      <h3>Q: Who are the Brotherhood of Steel?</h3>
+      <p>A: A tech-focused faction that collects and controls advanced technology. They have been in the series since the first Fallout and have gone through many iterations.</p>
+
+      <h3>Q: What is Nuka-Cola?</h3>
+      <p>A: A popular soda brand in Fallout’s world that imitates Coca-Cola.</p>
+</div>      
+
+<section class="faction-box">
+    <h2>What Faction Should You Play?</h2>
+    <div class="faction-buttons">
+  <button class="faction-btn ncr" data-faction="ncr">NCR</button>
+   <button class="faction-btn brotherhood" data-faction="brotherhood">Brotherhood</button>
+  <button class="faction-btn house" data-faction="house">Mr. House</button>
+   <button class="faction-btn legion" data-faction="legion">Legion</button>
+  <button class="faction-btn minutemen" data-faction="minutemen">Minutemen</button>
+ </div>
+<div id="factionResult" class="faction-result">
+ <p>Select a faction to learn more about it.</p>
+    </div>
+</section>
+
+
+<script>
+const factionButtons = document.querySelectorAll(".faction-btn");
+const factionResult = document.getElementById("factionResult");
+
+const factions = {
+    ncr: {
+        name: "NCR",
+        description: "The New California Republic wants to bring order, law, and democracy back to the wasteland.",
+        strength: "Strength: Large army and organized government.",
+        weakness: "Weakness: Corruption, overexpansion, and bureaucracy.",
+        playstyle: "Best for players who like law, politics, and rebuilding civilization."
+    },
+    brotherhood: {
+        name: "Brotherhood of Steel",
+        description: "The Brotherhood focuses on collecting and controlling advanced technology.",
+        strength: "Strength: Power armor, energy weapons, and military discipline.",
+        weakness: "Weakness: Isolationist and often unwilling to trust outsiders.",
+        playstyle: "Best for players who like tech, power armor, and military factions."
+    },
+    house: {
+        name: "Mr. House",
+        description: "Mr. House wants to control New Vegas through technology, wealth, and long-term planning.",
+        strength: "Strength: Intelligence, resources, and powerful securitrons.",
+        weakness: "Weakness: Cold, controlling, and disconnected from ordinary people.",
+        playstyle: "Best for players who like strategy, independence, and New Vegas politics."
+    },
+    legion: {
+        name: "Caesar's Legion",
+        description: "Caesar's Legion is a brutal empire built on conquest, discipline, and fear.",
+        strength: "Strength: Loyalty, discipline, and strong melee combat culture.",
+        weakness: "Weakness: Cruelty, slavery, and rejection of personal freedom.",
+        playstyle: "Best for the players who want an evil or melee playthrough."
+    },
+    minutemen: {
+        name: "Minutemen",
+        description: "The Minutemen are a volunteer militia focused on protecting settlements.",
+        strength: "Strength: Community defense and helping ordinary people.",
+        weakness: "Weakness: Weak organization unless rebuilt by the player.",
+        playstyle: "Best for players who like settlement building and being the good guy."
+    }
+};
+
+function showFaction(factionKey) {
+    const f = factions[factionKey];
+
+    factionResult.classList.remove("show");
+
+    setTimeout(() => {
+        factionResult.innerHTML = `
+            <h3>${f.name}</h3>
+            <p>${f.description}</p>
+
+            <div class="detail-buttons">
+                <button onclick="showDetail('${f.strength}')">Strength</button>
+                <button onclick="showDetail('${f.weakness}')">Weakness</button>
+                <button onclick="showDetail('${f.playstyle}')">Playstyle</button>
+            </div>
+
+            <p id="detailText">Click a button above to view more details.</p>
+        `;
+
+        factionResult.classList.add("show");
+    }, 150);
+}
+
+function showDetail(text) {
+    document.getElementById("detailText").textContent = text;
+}
+
+factionButtons.forEach(button => {
+    button.addEventListener("click", function() {
+        factionButtons.forEach(btn => btn.classList.remove("active"));
+        this.classList.add("active");
+
+        const selectedFaction = this.dataset.faction;
+        showFaction(selectedFaction);
+    });
+});
+</script>
+
+<footer>
+	<p> Fallout Fan Page | Created by Michael Denton for CIS 3020 Web Page Development </p>
+	<p>	Fallout © Bethesda Softworks </p>
+</footer>	
+
+</body>
+</html>
